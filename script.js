@@ -1,10 +1,10 @@
 const views=[...document.querySelectorAll('[data-view-panel]')];
 const navLinks=[...document.querySelectorAll('[data-view-link]')];
-const validViews=new Set(['about',...views.map(view=>view.dataset.viewPanel)]);
+const validViews=new Set(views.map(view=>view.dataset.viewPanel));
 
 function showView(){
   const requested=location.hash.slice(1);
-  const active=validViews.has(requested)?requested:'about';
+  const active=validViews.has(requested)?requested:'research';
   views.forEach(view=>{
     const selected=view.dataset.viewPanel===active;
     view.hidden=!selected;
