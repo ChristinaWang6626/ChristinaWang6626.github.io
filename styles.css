@@ -6,8 +6,8 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .skip-link{position:fixed;left:16px;top:-60px;z-index:99;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 8px 8px}
 .skip-link:focus{top:0}
-.page-shell{min-height:100vh;display:grid;grid-template-columns:minmax(310px,36vw) minmax(0,1fr)}
-.profile-panel{position:sticky;top:0;height:100vh;padding:clamp(28px,4vw,66px);display:flex;flex-direction:column;justify-content:center;background:var(--ink);color:var(--white);overflow:hidden}
+.page-shell{min-height:100vh;display:grid;grid-template-columns:clamp(280px,29vw,360px) minmax(0,1fr)}
+.profile-panel{position:sticky;top:0;height:100vh;padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:center;background:var(--ink);color:var(--white);overflow:hidden}
 .profile-panel::before{content:'';position:absolute;width:250px;height:250px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-80px}
 .profile-panel::after{content:'';position:absolute;width:140px;height:140px;border:1px solid rgba(216,153,53,.55);border-radius:50%;right:-60px;top:-22px}
 .portrait-wrap{width:min(260px,82%);aspect-ratio:4/5;position:relative;margin:0 auto 30px;border-radius:130px 130px 20px 20px;overflow:hidden;background:#223148;box-shadow:0 24px 55px rgba(0,0,0,.35)}
@@ -20,7 +20,7 @@ img{display:block;max-width:100%}
 .profile-affiliation{margin:5px 0 20px;color:#d2d9e2;font-size:14px;line-height:1.55}
 .email-link{display:inline-flex;gap:10px;align-items:center;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.35);font-size:14px;transition:border-color .2s,color .2s}
 .email-link:hover{color:#f2bc62;border-color:#f2bc62}
-.profile-foot{position:absolute;left:clamp(28px,4vw,66px);bottom:30px;width:230px;margin:0;color:#9ba8b8;font:500 11px/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.profile-foot{position:absolute;left:clamp(24px,3vw,42px);bottom:30px;width:230px;margin:0;color:#9ba8b8;font:500 11px/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase}
 .content-panel{min-width:0;background:#fff;min-height:100vh}
 .site-header{height:82px;padding:0 clamp(28px,6vw,92px);display:flex;align-items:center;justify-content:flex-end;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
 .site-header nav{display:flex;gap:9px;align-items:center}
