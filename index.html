@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260917-3">
-  <script src="script.js?v=20260917-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260917-4">
+  <script src="script.js?v=20260917-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -21,33 +21,22 @@
       <p class="profile-foot">Reliable learning for complex, distributed data.</p>
     </aside>
     <div class="content-panel" id="top">
-      <header class="site-header">
-        <a class="mobile-brand" href="#about">TW<span>.</span></a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-        <nav id="site-nav" aria-label="Main navigation">
-          <a href="#about" data-view-link="about">About</a>
-          <a href="#research" data-view-link="research">Research</a>
-          <a href="#publications" data-view-link="publications">Papers</a>
-          <a href="#honors" data-view-link="honors">Honors</a>
-        </nav>
-      </header>
       <main id="main">
-        <section class="content-view intro" id="about" data-view="about">
-          <p class="intro-label">Tingyin Wang · University of Pennsylvania</p>
-          <h2>Building statistical methods that remain <em>reliable</em> in the real world.</h2>
+        <section class="intro" id="about">
+          <h2>Welcome to Tingyin’s homepage!</h2>
           <div class="intro-grid">
-            <p class="intro-lead">I’m Tingyin Wang, a Ph.D. student developing privacy-aware and dependable machine learning methods for complex and distributed data.</p>
-            <p>My work sits at the intersection of statistical learning and machine learning, with an emphasis on methods that remain dependable when data are heterogeneous, high-dimensional, or distributed across institutions. I am advised by Prof. Yong Chen at Penn.</p>
+            <p class="intro-lead">I am a Ph.D. student at the University of Pennsylvania, advised by Prof. Yong Chen.</p>
+            <p>My work sits at the intersection of statistical learning and machine learning, with an emphasis on methods that remain dependable when data are heterogeneous, high-dimensional, or distributed across institutions.</p>
           </div>
-          <div class="view-switcher" aria-label="Explore the website">
-            <a class="view-link" href="#research"><span>Research</span><small>Methods and focus areas</small><b aria-hidden="true">↗</b></a>
-            <a class="view-link" href="#publications"><span>Research paper</span><small>Published and current work</small><b aria-hidden="true">↗</b></a>
-            <a class="view-link" href="#honors"><span>Honors & Awards</span><small>Selected recognition</small><b aria-hidden="true">↗</b></a>
-          </div>
+          <nav class="section-tabs" aria-label="Homepage sections">
+            <a href="#about" data-view-link="about">Overview</a>
+            <a href="#research" data-view-link="research">Research</a>
+            <a href="#publications" data-view-link="publications">Research paper</a>
+            <a href="#honors" data-view-link="honors">Honors & Awards</a>
+          </nav>
         </section>
 
-        <section class="content-view section-block" id="research" data-view="research">
-          <a class="back-link" href="#about">← Back to overview</a>
+        <section class="content-view section-block" id="research" data-view-panel="research">
           <div class="section-heading"><h2>Questions I work on</h2><p>Methods designed for settings where data, institutions, and populations do not behave uniformly.</p></div>
           <div class="research-grid">
             <article><h3>Federated & Transfer Learning</h3><p>Learning across heterogeneous data sources while preserving privacy and extracting shared signal.</p></article>
@@ -57,8 +46,7 @@
           </div>
         </section>
 
-        <section class="content-view section-block publications" id="publications" data-view="publications">
-          <a class="back-link" href="#about">← Back to overview</a>
+        <section class="content-view section-block publications" id="publications" data-view-panel="publications">
           <div class="section-heading publication-heading"><div><h2>Research paper</h2></div><p>Under-review manuscripts appear first, followed by published work from newest to oldest.</p></div><div class="paper-list">
           <article class="paper-item"><div class="paper-meta"><span class="status review">Under review</span><time>2026</time></div><div class="paper-body"><p>Journal of Machine Learning Research</p><h3>Targeting Underrepresented Minorities: A Privacy-Preserving Transfer Learning Approach</h3><p class="authors"><strong>Tingyin Wang</strong>, Jiaxin Hu, Yichen Wang, Yong Chen</p></div></article>
           <article class="paper-item"><div class="paper-meta"><span class="status review">Under review</span><time>2026</time></div><div class="paper-body"><p>npj Metabolic Health and Disease</p><h3>Federated Target Trial Emulation for Time-to-Event Outcomes via POLARIS: Pooled-Equivalent One-Shot Likelihood Aggregation for Real-World Inference in Survival</h3><p class="authors"><strong>Tingyin Wang</strong>, Yutong Lei, Lili Li, Yichen Wang, et al.</p></div></article>
@@ -70,8 +58,7 @@
           <article class="paper-item published"><div class="paper-meta"><span class="status">Published</span><time>2024</time></div><div class="paper-body"><p>Statistics and Its Interface</p><h3>An Improved Strategy for Predicting Alzheimer’s Disease Progression in Patients with Mild Cognitive Impairment by Clustering Hippocampal Shape Data</h3><p class="authors"><strong>Tingyin Wang</strong>, Zhe Gao, Xueqin Wang</p><a class="paper-link" href="https://link.intlpress.com/JDetail/1830872066032259074" target="_blank" rel="noreferrer">View DOI ↗</a></div></article>
         </div></section>
 
-        <section class="content-view section-block honors" id="honors" data-view="honors">
-          <a class="back-link" href="#about">← Back to overview</a>
+        <section class="content-view section-block honors" id="honors" data-view-panel="honors">
           <div class="section-heading"><h2>Honors & Awards</h2></div>
           <div class="honors-list"><article><time>2024–2026</time><div><h3>Benjamin Franklin Fellowship</h3><p>University of Pennsylvania</p></div></article><article><time>2023</time><div><h3>Suzhou Industrial Park Fellowship</h3><p>University of Science and Technology of China · Top 1%</p></div></article><article><time>2021–2023</time><div><h3>Outstanding Student Scholarship</h3><p>University of Science and Technology of China</p></div></article><article><time>2021</time><div><h3>Outstanding Undergraduate Thesis Award</h3><p>Sun Yat-sen University</p></div></article><article><time>2021</time><div><h3>Outstanding Undergraduate Award</h3><p>Sun Yat-sen University</p></div></article></div>
         </section>
