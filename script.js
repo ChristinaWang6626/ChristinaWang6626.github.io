@@ -28,6 +28,13 @@ const chatPanel=chat?.querySelector('.chat-panel');
 const chatLauncher=chat?.querySelector('.chat-launcher');
 const chatClose=chat?.querySelector('.chat-close');
 const chatForm=chat?.querySelector('[data-chat-form]');
+const chatFormView=chat?.querySelector('[data-chat-form-view]');
+const chatSuccess=chat?.querySelector('[data-chat-success]');
+const chatSend=chat?.querySelector('.chat-send');
+const chatStatus=chat?.querySelector('.chat-form-status');
+const chatRetry=chat?.querySelector('.chat-retry');
+const chatAnother=chat?.querySelector('[data-chat-another]');
+const chatEndpoint='https://formsubmit.co/ajax/tingyinw@sas.upenn.edu';
 
 function setChat(open){
   if(!chatPanel||!chatLauncher)return;
@@ -44,13 +51,39 @@ document.addEventListener('keydown',event=>{
   if(event.key==='Escape'&&!chatPanel?.hidden)setChat(false);
 });
 
-chatForm?.addEventListener('submit',event=>{
+chatForm?.addEventListener('submit',async event=>{
   event.preventDefault();
-  const data=new FormData(chatForm);
-  const email=String(data.get('email')||'').trim();
-  const message=String(data.get('message')||'').trim();
-  if(!email||!message)return;
-  const subject=encodeURIComponent('Message from Tingyin Wang’s website');
-  const body=encodeURIComponent(`From: ${email}\n\n${message}`);
-  window.location.href=`mailto:tingyinw@sas.upenn.edu?subject=${subject}&body=${body}`;
+  if(!chatSend||!chatStatus||!chatRetry||!chatFormView||!chatSuccess)return;
+  chatStatus.className='chat-form-status';
+  chatStatus.textContent='';
+  chatRetry.hidden=true;
+  chatSend.disabled=true;
+  chatSend.textContent='Sending…';
+  const payload=Object.fromEntries(new FormData(chatForm).entries());
+  try{
+    const response=await fetch(chatEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok||result.success===false||result.success==='false')throw new Error('Submission failed');
+    chatForm.reset();
+    chatFormView.hidden=true;
+    chatSuccess.hidden=false;
+  }catch(error){
+    chatStatus.textContent='Message failed to send. Please check your email and message, then try again.';
+    chatStatus.className='chat-form-status show error';
+    chatRetry.hidden=false;
+  }finally{
+    chatSend.disabled=false;
+    chatSend.textContent='Send message';
+  }
+});
+
+chatRetry?.addEventListener('click',()=>chatForm?.requestSubmit());
+chatAnother?.addEventListener('click',()=>{
+  if(!chatFormView||!chatSuccess||!chatStatus||!chatRetry)return;
+  chatSuccess.hidden=true;
+  chatFormView.hidden=false;
+  chatStatus.className='chat-form-status';
+  chatStatus.textContent='';
+  chatRetry.hidden=true;
+  chatForm?.querySelector('input[type="email"]')?.focus();
 });
