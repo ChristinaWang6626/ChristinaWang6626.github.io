@@ -34,7 +34,7 @@ const chatSend=chat?.querySelector('.chat-send');
 const chatStatus=chat?.querySelector('.chat-form-status');
 const chatRetry=chat?.querySelector('.chat-retry');
 const chatAnother=chat?.querySelector('[data-chat-another]');
-const chatEndpoint='https://formsubmit.co/ajax/tingyinw@sas.upenn.edu';
+const chatEndpoint='https://formsubmit.co/ajax/christinawang6626@gmail.com';
 
 function setChat(open){
   if(!chatPanel||!chatLauncher)return;
